@@ -20,7 +20,7 @@ class SSHAutoFormatSetting : PersistentStateComponent<Element> {
     }
 
     override fun loadState(state: Element) {
-        this.actionCodeFormat = state.getAttributeValue("setActionCodeFormat")
+        this.actionCodeFormat = state.getAttributeValue("actionCodeFormat")
     }
 
     companion object {
