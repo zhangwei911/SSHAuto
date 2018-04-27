@@ -1,0 +1,53 @@
+<idea-plugin>
+    <id>viz.idea.plugin.ii-plugin</id>
+    <name>Plugin display name here</name>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <toolWindow id="testToolWindow" anchor="right" factoryClass="viz.intellij.plugin.MyToolWindowFactory"/>
+        <defaultLiveTemplatesProvider implementation="MarkdownTemplateProvider"/>
+        <liveTemplateContext implementation="MarkdownContext"/>
+        <configurationType implementation="org.jetbrains.tutorials.run.configuration.DemoRunConfigurationType"/>
+        <applicationConfigurable instance="viz.intellij.plugin.SSHAutoComponent"/>
+        <applicationService serviceInterface="viz.intellij.plugin.SSHAutoComponent" serviceImplementation="viz.intellij.plugin.SSHAutoComponent"/>
+        <applicationConfigurable instance="com.ctt.format.setting.FormatConfigurable"/>
+        <applicationService serviceInterface="com.ctt.format.setting.FormatSetting"
+                            serviceImplementation="com.ctt.format.setting.FormatSetting"/>
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+        <component>
+            <implementation-class>viz.intellij.plugin.SSHAutoComponent</implementation-class>
+        </component>
+    </application-components>
+
+    <actions>
+        <!-- Add your actions here -->
+        <!--<group id="SSHAutoPlugin.SampleMenu" text="Greeting" description="Greeting Menu">-->
+            <!--<add-to-group group-id="MainMenu" anchor="last"/>-->
+            <!--<action class="viz.intellij.plugin.HelloAction" id="SSHAutoPlugin.Textboxes" text="Hello" description="Says Hello"/>-->
+        <!--</group>-->
+        <action id="SayHello" class="viz.intellij.plugin.HelloAction" text="Say Hello!">
+            <add-to-group group-id="WindowMenu" anchor="last"/>
+        </action>
+        <action id="generateSSHNew" class="viz.intellij.plugin.SSHAutoAction" text="SSH" description="Generates SSH Files And Config">
+        　　<add-to-group group-id="CodeMenu" anchor="last"/>
+        </action>
+        <action id="generateGSDoc" class="com.ctt.format.GenerateGSAction" text="generateGSDoc">
+            <add-to-group group-id="GenerateGroup" anchor="last" />
+        </action>
+    </actions>
+</idea-plugin>
