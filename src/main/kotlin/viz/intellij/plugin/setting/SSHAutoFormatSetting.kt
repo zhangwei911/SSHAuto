@@ -11,7 +11,7 @@ import org.jdom.Element
 @State(name = "SSHAutoFormatSetting", storages = [(Storage("\$APP_CONFIG$/SSHAutoFormat.xml"))])
 class SSHAutoFormatSetting : PersistentStateComponent<Element> {
     var actionCodeFormat: String? = null
-        get() = if (field == null) StatementGenerator.defaultSetFormat else field
+        get() = if (field == null) "" else field
 
     override fun getState(): Element? {
         val element = Element("SSHAutoTestSettings")

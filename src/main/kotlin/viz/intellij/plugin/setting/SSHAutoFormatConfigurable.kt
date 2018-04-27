@@ -33,7 +33,12 @@ class SSHAutoFormatConfigurable : Configurable {
 
     @Throws(ConfigurationException::class)
     override fun apply() {
+        this.sshAutoFormatSetting.actionCodeFormat = codeField.text
+    }
 
+    override fun reset() {
+        super.reset()
+        codeField.text = this.sshAutoFormatSetting.actionCodeFormat
     }
 
     private fun createNamePanel(): JComponent {

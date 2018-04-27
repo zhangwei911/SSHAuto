@@ -31,13 +31,13 @@ import javax.swing.KeyStroke
 import javax.swing.event.DocumentEvent
 
 class SSHAutoDialogWrapper : DialogWrapper {
-    private val contentPane: JPanel? = null
-    private val buttonOK: JButton? = null
-    private val buttonCancel: JButton? = null
-    private val textField_actionName_prefix: JTextField? = null
+    private var contentPane: JPanel? = null
+    private var buttonOK: JButton? = null
+    private var buttonCancel: JButton? = null
+    private var textField_actionName_prefix: JTextField? = null
     private var actionName_prefix: String? = null
 
-    protected constructor(psiClass: PsiClass) : super(psiClass.project) {
+    constructor(psiClass: PsiClass) : super(psiClass.project) {
         title = "SSHAuto"
         init()
     }

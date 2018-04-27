@@ -20,8 +20,8 @@
         <defaultLiveTemplatesProvider implementation="MarkdownTemplateProvider"/>
         <liveTemplateContext implementation="MarkdownContext"/>
         <configurationType implementation="org.jetbrains.tutorials.run.configuration.DemoRunConfigurationType"/>
-        <applicationConfigurable instance="viz.intellij.plugin.SSHAutoComponent"/>
-        <applicationService serviceInterface="viz.intellij.plugin.SSHAutoComponent" serviceImplementation="viz.intellij.plugin.SSHAutoComponent"/>
+        <applicationConfigurable instance="viz.intellij.plugin.setting.SSHAutoFormatConfigurable"/>
+        <applicationService serviceInterface="viz.intellij.plugin.setting.SSHAutoFormatSetting" serviceImplementation="viz.intellij.plugin.setting.SSHAutoFormatSetting"/>
         <applicationConfigurable instance="com.ctt.format.setting.FormatConfigurable"/>
         <applicationService serviceInterface="com.ctt.format.setting.FormatSetting"
                             serviceImplementation="com.ctt.format.setting.FormatSetting"/>
