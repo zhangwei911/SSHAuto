@@ -1,6 +1,5 @@
 package viz.intellij.plugin.setting
 
-import com.ctt.format.setting.StatementGenerator
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.components.State

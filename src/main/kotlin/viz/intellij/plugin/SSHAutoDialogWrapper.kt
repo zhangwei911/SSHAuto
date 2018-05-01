@@ -62,7 +62,7 @@ class SSHAutoDialogWrapper : DialogWrapper {
         // call onCancel() on ESCAPE
         contentPane!!.registerKeyboardAction({ }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
 
-        jLabel_test!!.text = Html("<html><a href='settings'>设置</a></html>").text
+//        jLabel_test!!.text = Html("<html><a href='settings'>设置</a></html>").text
         var moduleSourceRoot = ProjectRootManager.getInstance(this.project!!).fileIndex
         var projectName = project!!.name
         var vFiles = ProjectRootManager.getInstance(project!!).contentSourceRoots
