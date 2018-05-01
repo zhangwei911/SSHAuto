@@ -49,5 +49,9 @@
         <action id="generateGSDoc" class="com.ctt.format.GenerateGSAction" text="generateGSDoc">
             <add-to-group group-id="GenerateGroup" anchor="last" />
         </action>
+
+        <action class="viz.intellij.plugin.PsiNavigationDemoAction" id="PsiNavigationDemo" text="PSI Navigation Demo...">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
     </actions>
 </idea-plugin>

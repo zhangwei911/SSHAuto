@@ -10,11 +10,12 @@ import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.openapi.actionSystem.PlatformDataKeys
 import com.intellij.openapi.actionSystem.LangDataKeys
 import com.intellij.openapi.actionSystem.AnActionEvent
-
-
+import com.intellij.openapi.components.ServiceManager
+import viz.intellij.plugin.setting.SSHAutoFormatSetting
 
 
 class SSHAutoAction : AnAction("SSHAuto") {
+    private var sshAutoFormatSetting:SSHAutoFormatSetting? = null
 
     override fun actionPerformed(event: AnActionEvent) {
         val project = event.project as Project
@@ -23,18 +24,20 @@ class SSHAutoAction : AnAction("SSHAuto") {
         var sshAutoComponent = application.getComponent(SSHAutoComponent::class.java)
 //        sshAutoComponent.sayHello()
 
-        object : WriteCommandAction.Simple<EmptyEntity>(project) {
-            @Throws(Throwable::class)
-            protected override fun run() {
-                var file = File("test.txt")
-                if(file.exists()){
-                    file.delete()
-                }
-                file.createNewFile()
-            }
-        }.execute()
+//        object : WriteCommandAction.Simple<EmptyEntity>(project) {
+//            @Throws(Throwable::class)
+//            protected override fun run() {
+//                var file = File("test.txt")
+//                if(file.exists()){
+//                    file.delete()
+//                }
+//                file.createNewFile()
+//            }
+//        }.execute()
 
+        this.sshAutoFormatSetting = SSHAutoFormatSetting.instance
         var psiClass = getPsiClassFromContext(event)
+        println(project.basePath)
         var dialogWrapper = SSHAutoDialogWrapper(project)
         dialogWrapper.show()
     }
