@@ -72,9 +72,9 @@ class SSHAutoDialogWrapper : DialogWrapper {
             comboBox_code!!.addItem(vFiles[i].path)
             comboBox_resource!!.addItem(vFiles[i].path)
         }
-        textField_actionName_prefix!!.text += Random().nextInt(100)
-        textField_package!!.text += Random().nextInt(100)
-        textField_extraParams!!.text += Random().nextInt(100)
+//        textField_actionName_prefix!!.text += Random().nextInt(100)
+//        textField_package!!.text += Random().nextInt(100)
+//        textField_extraParams!!.text += Random().nextInt(100)
     }
 
     override fun doOKAction() {
