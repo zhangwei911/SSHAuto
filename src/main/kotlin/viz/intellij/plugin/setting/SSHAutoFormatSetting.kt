@@ -15,10 +15,6 @@ class SSHAutoFormatSetting : PersistentStateComponent<Element> {
         get() = if (field == null) "" else field
     var actionBeanCodeFormat: String? = null
         get() = if (field == null) "" else field
-    var xmlPath: String? = null
-        get() = if (field == null) "" else field
-    var extraParams: String? = null
-        get() = if (field == null) "" else field
 
     override fun getState(): Element? {
         //设置settings显示名称
@@ -27,7 +23,6 @@ class SSHAutoFormatSetting : PersistentStateComponent<Element> {
         element.setAttribute("actionCodeFormat", this.actionCodeFormat)
         element.setAttribute("actionConfigCodeFormat", this.actionConfigCodeFormat)
         element.setAttribute("actionBeanCodeFormat", this.actionBeanCodeFormat)
-        element.setAttribute("xmlPath", this.xmlPath)
         return element
     }
 
@@ -35,7 +30,6 @@ class SSHAutoFormatSetting : PersistentStateComponent<Element> {
         this.actionCodeFormat = state.getAttributeValue("actionCodeFormat")
         this.actionConfigCodeFormat = state.getAttributeValue("actionConfigCodeFormat")
         this.actionBeanCodeFormat = state.getAttributeValue("actionBeanCodeFormat")
-        this.xmlPath = state.getAttributeValue("xmlPath")
     }
 
     companion object {

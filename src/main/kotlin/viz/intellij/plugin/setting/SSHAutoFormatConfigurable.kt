@@ -7,9 +7,11 @@ import com.intellij.openapi.options.ConfigurationException
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.TextFieldWithBrowseButton
 import com.intellij.openapi.vfs.VirtualFile
+import com.intellij.util.ui.Html
 
 import org.jetbrains.annotations.Nls
 import viz.intellij.plugin.SSHAutoSettingsForm
+import viz.intellij.plugin.SSHAutoSettingsFormUIDSL
 
 import javax.swing.JComponent
 
@@ -17,6 +19,7 @@ class SSHAutoFormatConfigurable : Configurable {
     //    private lateinit var codeField:JTextField
     private var sshAutoFormatSetting = SSHAutoFormatSetting.instance
     private var sshAutoSettingsForm: SSHAutoSettingsForm? = null
+//    private var sshAutoSettingsForm: SSHAutoSettingsFormUIDSL? = null
     @Nls
     override fun getDisplayName(): String {
         return "SSHAutoTestSettings"
@@ -29,28 +32,23 @@ class SSHAutoFormatConfigurable : Configurable {
 
         if (null == this.sshAutoSettingsForm) {
             this.sshAutoSettingsForm = SSHAutoSettingsForm()
+//            this.sshAutoSettingsForm = SSHAutoSettingsFormUIDSL()
         }
         var mainPanel = this.sshAutoSettingsForm!!.mainPanel
 
-        this.sshAutoSettingsForm!!.button_xml!!.addActionListener {
-            var fileChooserDescriptor = FileChooserDescriptor(false, true, false, false, false, false)
-            var selectDirectoryXml = FileChooser.chooseFile(fileChooserDescriptor, null, null)
-            this.sshAutoSettingsForm!!.textField_xml!!.text = selectDirectoryXml!!.path
-        }
-
-        this.sshAutoSettingsForm!!.label_desc!!.text = "default params:<br>" +
+        this.sshAutoSettingsForm!!.label_desc!!.text = Html("<html>default params:<br>" +
                 "${'$'}{ACTION_NAME_PREFIX}<br>" +
                 "${'$'}{PACKAGE}<br>" +
                 "extra params:<br>" +
                 "prefix:EXTRA_PARAM_<br>" +
-                "suffix:0..."
+                "suffix:0...<html>").text
 
         return mainPanel
     }
 
     override fun isModified(): Boolean {
 //        return this.sshAutoFormatSetting.actionCodeFormat != codeField.text
-        return this.sshAutoFormatSetting.actionCodeFormat != this.sshAutoSettingsForm!!.textArea_action!!.text || this.sshAutoFormatSetting.actionConfigCodeFormat != this.sshAutoSettingsForm!!.textArea_actionConfig!!.text || this.sshAutoFormatSetting.actionBeanCodeFormat != this.sshAutoSettingsForm!!.textArea_actionBean!!.text || this.sshAutoFormatSetting.xmlPath != this.sshAutoSettingsForm!!.textField_xml!!.text
+        return this.sshAutoFormatSetting.actionCodeFormat != this.sshAutoSettingsForm!!.textArea_action!!.text || this.sshAutoFormatSetting.actionConfigCodeFormat != this.sshAutoSettingsForm!!.textArea_actionConfig!!.text || this.sshAutoFormatSetting.actionBeanCodeFormat != this.sshAutoSettingsForm!!.textArea_actionBean!!.text
     }
 
     @Throws(ConfigurationException::class)
@@ -59,7 +57,6 @@ class SSHAutoFormatConfigurable : Configurable {
         this.sshAutoFormatSetting.actionCodeFormat = this.sshAutoSettingsForm!!.textArea_action!!.text
         this.sshAutoFormatSetting.actionConfigCodeFormat = this.sshAutoSettingsForm!!.textArea_actionConfig!!.text
         this.sshAutoFormatSetting.actionBeanCodeFormat = this.sshAutoSettingsForm!!.textArea_actionBean!!.text
-        this.sshAutoFormatSetting.xmlPath = this.sshAutoSettingsForm!!.textField_xml!!.text
     }
 
     override fun reset() {
@@ -68,7 +65,6 @@ class SSHAutoFormatConfigurable : Configurable {
         this.sshAutoSettingsForm!!.textArea_action!!.text = this.sshAutoFormatSetting.actionCodeFormat
         this.sshAutoSettingsForm!!.textArea_actionConfig!!.text = this.sshAutoFormatSetting.actionConfigCodeFormat
         this.sshAutoSettingsForm!!.textArea_actionBean!!.text = this.sshAutoFormatSetting.actionBeanCodeFormat
-        this.sshAutoSettingsForm!!.textField_xml!!.text = this.sshAutoFormatSetting.xmlPath
     }
 
 //    private fun createNamePanel(): JComponent {

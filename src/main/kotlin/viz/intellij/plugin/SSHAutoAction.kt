@@ -39,7 +39,9 @@ class SSHAutoAction : AnAction("SSHAuto") {
         var psiClass = getPsiClassFromContext(event)
         println(project.basePath)
         var dialogWrapper = SSHAutoDialogWrapper(project)
+//        var dialogWrapper = SSHAutoDialogWrapperUI(project)
         dialogWrapper.show()
+
     }
 
     private fun getPsiClassFromContext(e: AnActionEvent): PsiClass? {

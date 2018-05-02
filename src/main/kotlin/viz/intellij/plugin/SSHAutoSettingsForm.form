@@ -13,7 +13,7 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Action模版:"/>
+          <text value="Action Template:"/>
         </properties>
       </component>
       <hspacer id="ed210">
@@ -34,7 +34,7 @@
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="ActionConfig模版:"/>
+          <text value="ActionConfig Template:"/>
         </properties>
       </component>
       <component id="4a9a8" class="javax.swing.JTextArea" binding="textArea_actionConfig">
@@ -50,7 +50,7 @@
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="ActionBean模版:"/>
+          <text value="ActionBean Template:"/>
         </properties>
       </component>
       <component id="4181d" class="javax.swing.JTextArea" binding="textArea_actionBean">
@@ -60,30 +60,6 @@
           </grid>
         </constraints>
         <properties/>
-      </component>
-      <component id="8df4f" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="xml路径:"/>
-        </properties>
-      </component>
-      <component id="efd2b" class="javax.swing.JTextField" binding="textField_xml">
-        <constraints>
-          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="5c9d6" class="javax.swing.JButton" binding="button_xml">
-        <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="..."/>
-        </properties>
       </component>
       <component id="edeb8" class="javax.swing.JLabel" binding="label_desc">
         <constraints>

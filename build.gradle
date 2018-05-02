@@ -46,5 +46,11 @@ intellij {
     }
 }
 patchPluginXml {
-    apply from: "changeNotes.properties"
+    def changeNotesPropsFile = file('changeNotes.properties')
+    def Properties changeNotesProps
+    if (changeNotesPropsFile.canRead()) {
+        changeNotesProps = new Properties()
+        changeNotesProps.load(new FileInputStream(changeNotesPropsFile))
+        changeNotes = changeNotesProps['changeNotes']
+    }
 }
