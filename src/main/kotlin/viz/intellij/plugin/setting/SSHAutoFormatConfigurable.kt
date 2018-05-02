@@ -14,7 +14,7 @@ import viz.intellij.plugin.SSHAutoSettingsForm
 import javax.swing.JComponent
 
 class SSHAutoFormatConfigurable : Configurable {
-//    private lateinit var codeField:JTextField
+    //    private lateinit var codeField:JTextField
     private var sshAutoFormatSetting = SSHAutoFormatSetting.instance
     private var sshAutoSettingsForm: SSHAutoSettingsForm? = null
     @Nls
@@ -33,10 +33,17 @@ class SSHAutoFormatConfigurable : Configurable {
         var mainPanel = this.sshAutoSettingsForm!!.mainPanel
 
         this.sshAutoSettingsForm!!.button_xml!!.addActionListener {
-            var fileChooserDescriptor = FileChooserDescriptor(false,true,false,false,false,false)
-            var selectDirectoryXml = FileChooser.chooseFile(fileChooserDescriptor,null,null)
+            var fileChooserDescriptor = FileChooserDescriptor(false, true, false, false, false, false)
+            var selectDirectoryXml = FileChooser.chooseFile(fileChooserDescriptor, null, null)
             this.sshAutoSettingsForm!!.textField_xml!!.text = selectDirectoryXml!!.path
         }
+
+        this.sshAutoSettingsForm!!.label_desc!!.text = "default params:\n" +
+                "${'$'}{ACTION_NAME_PREFIX}\n" +
+                "${'$'}{PACKAGE}\n" +
+                "extra params:\n" +
+                "prefix:EXTRA_PARAM_\n" +
+                "suffix:0..."
 
         return mainPanel
     }

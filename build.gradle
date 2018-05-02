@@ -15,7 +15,7 @@ plugins {
 }
 
 group 'viz.idea.plugin'
-version '1.0.201805011710-SNAPSHOT'
+version '1.0.201805011747-SNAPSHOT'
 
 apply plugin: 'kotlin'
 apply plugin: 'idea'
@@ -46,6 +46,8 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      
+      delete test code<br>
+      It has little effect on use<br>
+      add params description
       """
 }
