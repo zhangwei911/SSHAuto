@@ -38,11 +38,11 @@ class SSHAutoFormatConfigurable : Configurable {
             this.sshAutoSettingsForm!!.textField_xml!!.text = selectDirectoryXml!!.path
         }
 
-        this.sshAutoSettingsForm!!.label_desc!!.text = "default params:\n" +
-                "${'$'}{ACTION_NAME_PREFIX}\n" +
-                "${'$'}{PACKAGE}\n" +
-                "extra params:\n" +
-                "prefix:EXTRA_PARAM_\n" +
+        this.sshAutoSettingsForm!!.label_desc!!.text = "default params:<br>" +
+                "${'$'}{ACTION_NAME_PREFIX}<br>" +
+                "${'$'}{PACKAGE}<br>" +
+                "extra params:<br>" +
+                "prefix:EXTRA_PARAM_<br>" +
                 "suffix:0..."
 
         return mainPanel
