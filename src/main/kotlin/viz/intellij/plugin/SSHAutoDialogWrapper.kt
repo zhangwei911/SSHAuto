@@ -1,5 +1,6 @@
 package viz.intellij.plugin
 
+import com.intellij.openapi.options.ShowSettingsUtil
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.roots.ProjectRootManager
 import com.intellij.openapi.ui.DialogWrapper
@@ -80,7 +81,7 @@ class SSHAutoDialogWrapper : DialogWrapper {
                     "提示",
                     Messages.getInformationIcon()
             )
-            super.doCancelAction()
+            ShowSettingsUtil.getInstance().showSettingsDialog(null,"SSHAutoTestSettings")
             return
         }
         if (actionName_prefix.isNotEmpty() && textField_package!!.text.isNotEmpty()) {
