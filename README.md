@@ -31,3 +31,9 @@ Code-SSH:
 Code-SSH-Dialog(Extra Params value split by '|'):
 
 ![Image of Code-SSH-Dialog](Screenshots/Code-SSH-Dialog.png)
+
+### Open Source:
+
+[Github : https://github.com/zhangwei911/SSHAuto.git](https://github.com/zhangwei911/SSHAuto.git)
+
+[Oschina : https://gitee.com/wellchang/SSHAuto.git](https://gitee.com/wellchang/SSHAuto.git)
